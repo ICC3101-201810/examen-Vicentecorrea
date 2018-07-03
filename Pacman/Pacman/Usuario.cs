@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pacman
 {
+    [Serializable()]
     public class Usuario
     {
         public string nombre;

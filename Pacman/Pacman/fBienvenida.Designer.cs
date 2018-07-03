@@ -81,6 +81,7 @@
             this.linkLabel_tabla_de_posiciones.TabIndex = 4;
             this.linkLabel_tabla_de_posiciones.TabStop = true;
             this.linkLabel_tabla_de_posiciones.Text = "Ver tabla de posiciones";
+            this.linkLabel_tabla_de_posiciones.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_tabla_de_posiciones_LinkClicked);
             // 
             // FBienvenida
             // 

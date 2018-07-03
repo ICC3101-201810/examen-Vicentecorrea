@@ -21,7 +21,7 @@ namespace Pacman
             Usuario usuarioActivo = Aplicacion.IniciarSesion(iea.nombreUsuarioIngreso);
             FPacman fPacman = new FPacman(usuarioActivo);
             fPacman.Show();
-            this.fBienvenida.Hide();
+            //this.fBienvenida.Hide();
         }
     }
 }

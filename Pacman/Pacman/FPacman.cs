@@ -14,6 +14,7 @@ namespace Pacman
     {
         OPacman oPacman;
         OFruta oFruta;
+        OFantasma oFantasma;
         Usuario usuarioActivo;
         Graphics tableroGrafico;
         int dirX = 0, dirY = 0;
@@ -26,6 +27,8 @@ namespace Pacman
             this.tableroGrafico = pictureBox1.CreateGraphics();
             oPacman = new OPacman(320, 220);
             oFruta = new OFruta();
+            oFantasma = new OFantasma();
+            texto_titulo_puntaje_actual.Text = "0";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -33,21 +36,31 @@ namespace Pacman
             tableroGrafico.Clear(Color.White);
             oPacman.mostrarEnPantalla(tableroGrafico);
             oFruta.mostrarEnPantalla(tableroGrafico);
+            oFantasma.mostrarEnPantalla(tableroGrafico);
             mover();
 
             if (oFruta.hayColision(oPacman))
             {
                 oFruta.rePosicionar();
+                usuarioActivo.puntaje += 15;
+                texto_titulo_puntaje_actual.Text = usuarioActivo.puntaje.ToString();
             }
 
-        }
-        private void timer_fruta_Tick(object sender, EventArgs e)
-        {
-            
+            if (oFantasma.hayColision(oPacman))
+            { 
+                MessageBox.Show($"Nombre de usuario: {usuarioActivo.nombre}\n" +
+                    $"Puntaje obtenido: {usuarioActivo.puntaje}", "¡Perdiste!");
+                this.Hide();
+                Aplicacion.SerializarTodo();
+                timer1.Enabled = false;
+                
+            }
+
         }
 
         private void FPacman_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Aplicacion.SerializarTodo();
             Environment.Exit(0);
         }
 

@@ -36,7 +36,22 @@ namespace Pacman
 
         private void FBienvenida_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Aplicacion.SerializarTodo();
             Environment.Exit(0);
+        }
+
+        private void linkLabel_tabla_de_posiciones_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string i = Aplicacion.InfoHistorica();
+            if (i != "")
+            {
+                MessageBox.Show(i);
+            }
+            else
+            {
+                MessageBox.Show("No hay posiciones historicas");
+            }
+            
         }
     }
 }

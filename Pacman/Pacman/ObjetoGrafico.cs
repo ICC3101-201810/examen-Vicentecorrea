@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,16 @@ namespace Pacman
 
         public ObjetoGrafico()
         {
-
             this.tamano = 20;
         }
+
+        public int posAleatoria(int max)
+        {
+            Random random = new Random();
+            int num = random.Next(0, max) * 20;
+            return num;
+        }
+
 
         public bool hayColision(ObjetoGrafico otroObjeto)
         {
@@ -28,6 +36,11 @@ namespace Pacman
             {
                 return false;
             }
+        }
+
+        public int getX()
+        {
+            return this.posX;
         }
     }
 }
