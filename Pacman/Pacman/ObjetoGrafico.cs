@@ -12,7 +12,8 @@ namespace Pacman
 
         public ObjetoGrafico()
         {
-            this.tamano = 10;
+
+            this.tamano = 20;
         }
 
         public bool hayColision(ObjetoGrafico otroObjeto)

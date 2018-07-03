@@ -33,6 +33,7 @@
             this.texto_titulo_puntaje = new System.Windows.Forms.Label();
             this.texto_titulo_puntaje_actual = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer_fruta = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +41,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(41, 83);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(600, 460);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -70,6 +71,10 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer_fruta
+            // 
+            this.timer_fruta.Tick += new System.EventHandler(this.timer_fruta_Tick);
+            // 
             // FPacman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,6 +87,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pacman";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FPacman_FormClosed);
+            this.Load += new System.EventHandler(this.FPacman_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FPacman_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,5 +101,6 @@
         private System.Windows.Forms.Label texto_titulo_puntaje;
         private System.Windows.Forms.Label texto_titulo_puntaje_actual;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer_fruta;
     }
 }

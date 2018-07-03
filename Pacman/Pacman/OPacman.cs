@@ -22,10 +22,10 @@ namespace Pacman
             string ruta = Path.GetFullPath(@"..\..\..\..");
             string rutaElemento = ruta + "/pacman-up.png";
             Image icono = Image.FromFile(rutaElemento);
-            tableroGrafico.FillRectangle(new SolidBrush(Color.Blue), this.posX, this.posY, this.tamano, this.tamano);
+            tableroGrafico.FillEllipse(new SolidBrush(Color.Yellow), this.posX, this.posY, this.tamano, this.tamano);
         }
 
-        public void mover(int x, int y)
+        public void nuevoLugar(int x, int y)
         {
             this.posX = x;
             this.posY = y;
@@ -38,6 +38,10 @@ namespace Pacman
         public int getY()
         {
             return this.posY;
+        }
+        public int getTamano()
+        {
+            return this.tamano;
         }
     }
 }
