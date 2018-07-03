@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Pacman
 {
@@ -17,6 +18,8 @@ namespace Pacman
         public FBienvenida()
         {
             InitializeComponent();
+            
+
         }
 
         private void Boton_ingresar_Click(object sender, EventArgs e)

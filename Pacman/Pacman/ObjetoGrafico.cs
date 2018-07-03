@@ -8,7 +8,7 @@ namespace Pacman
 {
     abstract class ObjetoGrafico
     {
-        int posX, posY, tamano;
+        protected int posX, posY, tamano;
 
         public ObjetoGrafico()
         {

@@ -12,14 +12,18 @@ namespace Pacman
 {
     public partial class FPacman : Form
     {
+        OPacman oPacman;
         Usuario usuarioActivo;
         Graphics tableroGrafico;
+        int dirX = 0, dirY = 0;
+        bool ejeX = true, ejeY = true;
 
         public FPacman(Usuario usuarioActivo)
         {
             this.usuarioActivo = usuarioActivo;
             InitializeComponent();
             this.tableroGrafico = pictureBox1.CreateGraphics();
+            oPacman = new OPacman(320, 220);
         }
 
         private void FPacman_FormClosed(object sender, FormClosedEventArgs e)
@@ -35,6 +39,7 @@ namespace Pacman
         private void timer1_Tick(object sender, EventArgs e)
         {
             tableroGrafico.Clear(Color.White);
+            oPacman.mostrarEnPantalla(tableroGrafico);
         }
     }
 }
