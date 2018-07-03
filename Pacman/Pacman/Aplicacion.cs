@@ -30,9 +30,9 @@ namespace Pacman
         public static string InfoHistorica()
         {
             string info = "";
-            foreach ( Usuario u in usuarios)
+            foreach (Usuario u in usuarios)
             {
-                info += $"NOMBRE: {u.nombre}" + $"\tPUNTAJE MAXIMO: {u.puntaje}\n";
+                info += $"NOMBRE: {u.nombre}" + $"\t-\tPUNTAJE MAXIMO: {u.puntaje}\n";
             }
             return info;
         }
@@ -47,7 +47,25 @@ namespace Pacman
                     datosSerializacion.Serialize(stream, usuarios);
                 }
             }
-            catch (IOException) {}
+            catch (IOException) { }
+        }
+        public static void DeSerializarTodo()
+        {
+            try
+            {
+                using (Stream stream = File.Open("../../usuariosData.bin", FileMode.Open))
+                {
+                    BinaryFormatter usuariosData = new BinaryFormatter();
+
+                    var usuariosSerializados = (List<Usuario>)usuariosData.Deserialize(stream);
+                    foreach (Usuario u in usuariosSerializados)
+                    {
+                        usuarios.Add(u);
+
+                    }
+                }
+            }
+            catch (IOException) { }
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Pacman
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Aplicacion.DeSerializarTodo();
             FBienvenida fBienvenida = new FBienvenida();
             CIngreso cIngreso = new CIngreso(fBienvenida);
             Application.Run(fBienvenida);
